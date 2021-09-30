@@ -426,11 +426,6 @@ def main():                                 # Main game function.
                                 # del red[i]
                                 red.remove(red[i]);
 
-                            if nc > len(rolls) - 1:
-                                BLUE = True                         #next players turn.
-                                RED = False
-                                clear()
-                            break
 
 
                         # BLUES TURN!!!!!!!!!!!!!!!!!!!!
