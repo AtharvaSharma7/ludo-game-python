@@ -17,8 +17,7 @@ root.title("Checkers")
 Label(image=logo2, width=298, height=298).place(x=-1, y=-1)               #setting up board images
 Label(image=logo4, width=300, height=300).place(x=(-2), y=(448))
 Label(image=logo5, width=296, height=296).place(x=(450), y=(0))
-Label(image=logo6, width=294, height=294).place(x=(450), y=(450))
-Label(image=logo7, width=150, height=150).place(x=(298), y=(298))
+
 
 c = 0                                #initializing variable and flags that are to be used in the game
 lx = 0
@@ -28,8 +27,6 @@ rollc = 0
 rolls = []
 RED = True
 BLUE = False
-GREEN = False
-YELLOW = False
 TURN = True
 REDKILL = False
 BLUEKILL = False
@@ -112,14 +109,6 @@ def board():                            #Drawing the board, piece by piece.
 
     Label(image=logobs, width=46, height=46).place(x=(300), y=(650))
     Label(image=logob, width=46, height=46).place(x=(400), y=(600))
-
-    Label(image=logoh, width=46, height=46).place(x=250, y=400)        #Drawing arrows
-    Label(image=logot, width=46, height=46).place(x=300, y=450)
-    Label(image=logoh1, width=46, height=46).place(x=400, y=450)
-    Label(image=logot1, width=46, height=46).place(x=450, y=400)
-    Label(image=logoh2, width=46, height=46).place(x=450, y=300)
-    Label(image=logot2, width=46, height=46).place(x=400, y=250)
-    Label(image=logoh3, width=46, height=46).place(x=300, y=250)
     Label(image=logot3, width=46, height=46).place(x=250, y=300)
 
 class YBox:                               #Class of yellow box
@@ -293,14 +282,10 @@ def main():                                 # Main game function.
             box[i].x = (400)
             box[i].y = (0 + (50 * (i - 26)))
 
-        for i in range(32, 38):
-            box[i].x = (450 + (50 * (i - 32)))
-            box[i].y = (300)
-
         box[38].x = 700
         box[38].y = 350
 
-        for i in range(39, 45):
+        for i in range(49, 89):
             box[i].x = (700 - (50 * (i - 39)))
             box[i].y = (400)
 
@@ -493,12 +478,12 @@ def main():                                 # Main game function.
                                 break
                                 # bb= ((blue[i].num) + rolls[0 + nc]) - 52
 
-                            kill(bluebox,red,yellow,green,redhome,yellowhome,greenhome)
+                            kill(bluebox,red,yellowhome,greenhome)
 
                             blue[i].x0 = bluebox[bb].x
-                            blue[i].y0 = bluebox[bb].y
+                            
                             blue[i].x = bluebox[bb].x + 25
-                            blue[i].y = bluebox[bb].y + 25
+                          
                             blue[i].swap()
                             blue[i].num = bb
                             doublecheck(blue)
